@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 class Parallelogram {
 
     private double length;
@@ -36,6 +38,32 @@ class Parallelogram {
     }
     public double getDiagonal2() {
         return diagonal2;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Parallelogram that = (Parallelogram) o;
+        return Double.compare(that.length, length) == 0 &&
+                Double.compare(that.width, width) == 0 &&
+                Double.compare(that.diagonal1, diagonal1) == 0 &&
+                Double.compare(that.diagonal2, diagonal2) == 0;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(length, width, diagonal1, diagonal2);
+    }
+
+    @Override
+    public String toString() {
+        return "Parallelogram{" +
+                "length=" + length +
+                ", width=" + width +
+                ", diagonal1=" + diagonal1 +
+                ", diagonal2=" + diagonal2 +
+                '}';
     }
 
     boolean isSquare(){
