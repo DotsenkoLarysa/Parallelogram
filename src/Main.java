@@ -7,6 +7,8 @@ class Parallelogram {
     private double diagonal1;
     private double diagonal2;
 
+    public Parallelogram(){}
+
     public Parallelogram(double length, double width, double diagonal1, double diagonal2){
         this.length = length;
         this.width = width;
